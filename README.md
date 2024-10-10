@@ -1,6 +1,6 @@
 # StoicQuotes
 
-A project to learn more about interacting with APIs using Phoenix.
+A project to learn more about creating REST APIs with Phoenix.
  
 To start your Phoenix server:
 
