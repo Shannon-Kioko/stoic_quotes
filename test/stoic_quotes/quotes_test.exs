@@ -35,7 +35,12 @@ defmodule StoicQuotes.QuotesTest do
 
     test "update_quote/2 with valid data updates the quote" do
       quote = quote_fixture()
-      update_attrs = %{author: "some updated author", quote: "some updated quote", source: "some updated source"}
+
+      update_attrs = %{
+        author: "some updated author",
+        quote: "some updated quote",
+        source: "some updated source"
+      }
 
       assert {:ok, %Quote{} = quote} = Quotes.update_quote(quote, update_attrs)
       assert quote.author == "some updated author"

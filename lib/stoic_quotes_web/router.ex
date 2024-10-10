@@ -1,4 +1,5 @@
 defmodule StoicQuotesWeb.Router do
+  alias StoicQuotes.Quotes
   use StoicQuotesWeb, :router
 
   pipeline :browser do
@@ -18,6 +19,12 @@ defmodule StoicQuotesWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+  end
+
+  scope "/api", StoicQuotesWeb do
+    pipe_through :api
+    get "/quotes", QuotesController, :index
+    get "/quotes/random", QuotesController, :show
   end
 
   # Other scopes may use custom stacks.
